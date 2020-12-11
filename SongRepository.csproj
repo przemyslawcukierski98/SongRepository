@@ -67,16 +67,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutMePage.aspx" />
+    <Content Include="AlbumsPage.aspx" />
     <Content Include="App_Data\SongDatabase.mdf" />
     <Content Include="App_Data\SongDatabase_log.ldf">
       <DependentUpon>SongDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="ArtistsPage.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\musicMainPage.jpg" />
     <Content Include="MainPage.aspx" />
+    <Content Include="SongsPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutMePage.aspx.cs">
+      <DependentUpon>AboutMePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutMePage.aspx.designer.cs">
+      <DependentUpon>AboutMePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AlbumsPage.aspx.cs">
+      <DependentUpon>AlbumsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlbumsPage.aspx.designer.cs">
+      <DependentUpon>AlbumsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistsPage.aspx.cs">
+      <DependentUpon>ArtistsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistsPage.aspx.designer.cs">
+      <DependentUpon>ArtistsPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -88,6 +113,13 @@
       <DependentUpon>MainPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SongsPage.aspx.cs">
+      <DependentUpon>SongsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SongsPage.aspx.designer.cs">
+      <DependentUpon>SongsPage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
