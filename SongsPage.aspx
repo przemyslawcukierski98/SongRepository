@@ -76,6 +76,7 @@
 			<br />
 			<br />
 		</asp:Panel>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Songs]"></asp:SqlDataSource>
 	</form>
 </body>
 </html>
