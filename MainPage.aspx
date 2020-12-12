@@ -45,8 +45,8 @@
 			padding:6px 24px;
 			text-decoration:none;
 			text-shadow:0px 1px 0px #283966;
-            margin-top: 12px;
-        }
+			margin-top: 12px;
+		}
 		#logoutButton:hover {
 			background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
 			background-color:#476e9e;
@@ -60,38 +60,38 @@
 <body>
 	<form id="form1" runat="server">
 		<div>
-			<asp:Button ID="songsButton" runat="server" Text="Songs" Width="139px" Height="37px" />
-			<asp:Button ID="artistsButton" runat="server" Text="Artists" Width="139px" Height="37px" />
-			<asp:Button ID="albumsButton" runat="server" Text="Albums" Width="139px" Height="37px" />
-			<asp:Button ID="aboutAuthorButton" runat="server" Text="About me" Width="139px" Height="37px" />
+			<asp:Button ID="songsButton" runat="server" Text="Songs" Width="139px" Height="37px" OnClick="songsButton_Click" />
+			<asp:Button ID="artistsButton" runat="server" Text="Artists" Width="139px" Height="37px" OnClick="artistsButton_Click" />
+			<asp:Button ID="albumsButton" runat="server" Text="Albums" Width="139px" Height="37px" OnClick="albumsButton_Click" />
+			<asp:Button ID="aboutAuthorButton" runat="server" Text="About me" Width="139px" Height="37px" OnClick="aboutAuthorButton_Click" />
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="logoutButton" runat="server" Text="Logout" Width="139px" Height="37px" />
-		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</div>
 		<br />
-        <br />
-        <br />
-        <asp:Panel ID="PanelTitle" runat="server" HorizontalAlign="Center">
-            <asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" Text="Song repository - music catalogue application"></asp:Label>
-            <br />
-            <br />
-            <br />
-        </asp:Panel>
+		<br />
+		<br />
+		<asp:Panel ID="PanelTitle" runat="server" HorizontalAlign="Center">
+			<asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" Text="Song repository - music catalogue application" Font-Names="Sitka Text"></asp:Label>
+			<br />
+			<br />
+			<br />
+		</asp:Panel>
 &nbsp;&nbsp;
-        <asp:Panel ID="PanelImage" runat="server" HorizontalAlign="Center">
-            <asp:Image ID="Image1" runat="server" Height="340px" ImageUrl="~/Images/musicMainPage.jpg" Width="377px" />
-        </asp:Panel>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <asp:Panel ID="PanelPageDescription" runat="server" HorizontalAlign="Center">
-            <asp:Label ID="Label1" runat="server" Font-Size="Large" Text="Przemysław Cukierski (C), 2020"></asp:Label>
-        </asp:Panel>
-        <br />
+		<asp:Panel ID="PanelImage" runat="server" HorizontalAlign="Center">
+			<asp:Image ID="Image1" runat="server" Height="340px" ImageUrl="~/Images/musicMainPage.jpg" Width="377px" />
+		</asp:Panel>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<asp:Panel ID="PanelPageDescription" runat="server" HorizontalAlign="Center">
+			<asp:Label ID="Label1" runat="server" Font-Size="Large" Text="Przemysław Cukierski (C), 2020"></asp:Label>
+		</asp:Panel>
+		<br />
 &nbsp;</form>
 </body>
 </html>
