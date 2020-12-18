@@ -103,5 +103,113 @@ namespace SongRepository
         /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
+
+        /// <summary>
+        /// Kontrolka AddArtistButton.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddArtistButton;
+
+        /// <summary>
+        /// Kontrolka ArtistAddPanel.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ArtistAddPanel;
+
+        /// <summary>
+        /// Kontrolka Label1.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// Kontrolka Label2.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
+        /// Kontrolka NickTb.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NickTb;
+
+        /// <summary>
+        /// Kontrolka Label3.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
+        /// Kontrolka DataCalendar.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar DataCalendar;
+
+        /// <summary>
+        /// Kontrolka Label4.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+
+        /// <summary>
+        /// Kontrolka GenresTb.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox GenresTb;
+
+        /// <summary>
+        /// Kontrolka Label5.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+
+        /// <summary>
+        /// Kontrolka CountryTb.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CountryTb;
+
+        /// <summary>
+        /// Kontrolka AddArtistButtonFromPanel.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddArtistButtonFromPanel;
     }
 }
