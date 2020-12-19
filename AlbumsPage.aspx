@@ -31,7 +31,7 @@
 			position:relative;
 			top:1px;
 		}
-		#logoutButton {
+		#logoutButton, #AddAlbumButton, #AddAlbumButtonFromPanel {
 			box-shadow:inset 0px 1px 0px 0px #9fb4f2;
 			background-color:#7892c2;
 			border-radius:9px;
@@ -47,11 +47,11 @@
 			text-shadow:0px 1px 0px #283966;
 			margin-top: 12px;
 		}
-		#logoutButton:hover {
+		#logoutButton:hover, #AddAlbumButton:hover, #AddAlbumButtonFromPanel:hover {
 			background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
 			background-color:#476e9e;
 		}
-		#logoutButton:active {
+		#logoutButton:active, #AddAlbumButton:active, #AddAlbumButtonFromPanel:active {
 			position:relative;
 			top:1px;
 		}
@@ -67,30 +67,71 @@
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<asp:Button ID="logoutButton" runat="server" Text="Logout" Width="139px" Height="37px" />
 		</div>
-	    <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center">
-            <asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" HorizontalAlign="center" Text="List of albums" Font-Names="Sitka Text"></asp:Label>
-        </asp:Panel>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Albums]"></asp:SqlDataSource>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="306px" Width="902px">
-            <AlternatingRowStyle BackColor="White" />
-            <Columns>
-                <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-                <asp:BoundField DataField="Title" HeaderText="Tytuł" SortExpression="Title" />
-                <asp:BoundField DataField="Genre" HeaderText="Gatunki" SortExpression="Genre" />
-                <asp:BoundField DataField="Length" HeaderText="Długość" SortExpression="Length" />
-                <asp:BoundField DataField="ReleaseDate" HeaderText="Data wydania" SortExpression="ReleaseDate" />
-                <asp:BoundField DataField="ArtistId" HeaderText="Artysta" SortExpression="ArtistId" />
-            </Columns>
-            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-            <SortedAscendingCellStyle BackColor="#FDF5AC" />
-            <SortedAscendingHeaderStyle BackColor="#4D0000" />
-            <SortedDescendingCellStyle BackColor="#FCF6C0" />
-            <SortedDescendingHeaderStyle BackColor="#820000" />
-        </asp:GridView>
+		<asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center">
+			<asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" HorizontalAlign="center" Text="List of albums" Font-Names="Sitka Text"></asp:Label>
+		</asp:Panel>
+		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Albums]"></asp:SqlDataSource>
+		<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artists]"></asp:SqlDataSource>
+		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="306px" Width="902px">
+			<AlternatingRowStyle BackColor="White" />
+			<Columns>
+				<asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
+				<asp:BoundField DataField="Title" HeaderText="Album name" SortExpression="Title" />
+				<asp:BoundField DataField="Genre" HeaderText="Genre" SortExpression="Genre" />
+				<asp:BoundField DataField="Length" HeaderText="Length" SortExpression="Length" />
+				<asp:BoundField DataField="ReleaseDate" HeaderText="Release date" SortExpression="ReleaseDate" />
+				<asp:BoundField DataField="ArtistName" HeaderText="Artist name" SortExpression="ArtistName" />
+			</Columns>
+			<FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+			<HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+			<PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+			<RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+			<SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+			<SortedAscendingCellStyle BackColor="#FDF5AC" />
+			<SortedAscendingHeaderStyle BackColor="#4D0000" />
+			<SortedDescendingCellStyle BackColor="#FCF6C0" />
+			<SortedDescendingHeaderStyle BackColor="#820000" />
+		</asp:GridView>
+		<p>
+			<asp:Button ID="AddAlbumButton" runat="server" OnClick="AddAlbumButton_Click" Text="Dodaj album" />
+        </p>
+		<asp:Panel ID="AddAlbumPanel" runat="server">
+			<asp:Label ID="Label1" runat="server" Text="Panel dodawania albumu" Font-Bold="True" Font-Names="Sitka Text" Font-Size="Large"></asp:Label>
+			<br />
+			<br />
+			<asp:Label ID="Label2" runat="server" Text="Tytuł"></asp:Label>
+			&nbsp;&nbsp;
+			<asp:TextBox ID="TitleTb" runat="server"></asp:TextBox>
+			<br />
+			<br />
+			<asp:Label ID="Label3" runat="server" Text="Gatunki"></asp:Label>
+			&nbsp;&nbsp;
+			<asp:TextBox ID="GenresTb" runat="server"></asp:TextBox>
+			<br />
+			<br />
+			<asp:Label ID="Label4" runat="server" Text="Długość"></asp:Label>
+			&nbsp;&nbsp;
+			<asp:TextBox ID="MinTb" runat="server" Width="50px"></asp:TextBox>
+			&nbsp; min
+			<asp:TextBox ID="SecTb" runat="server" Width="50px"></asp:TextBox>
+			&nbsp;s
+			<br />
+			<br />
+			<asp:Label ID="Label5" runat="server" Text="Data wydania"></asp:Label>
+			&nbsp;<br />
+			<asp:Calendar ID="DateCalendar" runat="server"></asp:Calendar>
+			<br />
+			Artysta&nbsp;&nbsp;&nbsp;
+			<asp:DropDownList ID="ArtistDropdown" runat="server" DataSourceID="SqlDataSource2" DataTextField="Name" DataValueField="Name">
+			</asp:DropDownList>
+			<br />
+			<br />
+			<asp:Button ID="AddAlbumButtonFromPanel" runat="server" OnClick="AddArtistButtonFromPanel_Click" Text="Dodaj " />
+			<br />
+			<br />
+			<br />
+			<br />
+		</asp:Panel>
 	</form>
 </body>
 </html>
