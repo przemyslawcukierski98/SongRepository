@@ -79,10 +79,10 @@
 			<AlternatingRowStyle BackColor="White" />
 			<Columns>
 				<asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-				<asp:BoundField DataField="Name" HeaderText="Pseudonim" SortExpression="Name" />
-				<asp:BoundField DataField="DateOfBirth" HeaderText="Data urodzenia / powstania" SortExpression="DateOfBirth" />
-				<asp:BoundField DataField="Genres" HeaderText="Gatunki" SortExpression="Genres" />
-				<asp:BoundField DataField="CountryOfBirth" HeaderText="Kraj pochodzenia" SortExpression="CountryOfBirth" />
+				<asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+				<asp:BoundField DataField="DateOfBirth" HeaderText="Date of birth" SortExpression="DateOfBirth" />
+				<asp:BoundField DataField="Genres" HeaderText="Genres" SortExpression="Genres" />
+				<asp:BoundField DataField="CountryOfBirth" HeaderText="Country of birth" SortExpression="CountryOfBirth" />
 			</Columns>
 			<FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
 			<HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -95,12 +95,12 @@
 			<SortedDescendingHeaderStyle BackColor="#820000" />
 		</asp:GridView>
 		<br />
-		<asp:Button ID="AddArtistButton" runat="server" Text="Dodaj wykonawcę" OnClick="AddArtistButton_Click" />
+		<asp:Button ID="AddArtistButton" runat="server" Text="Add artist" OnClick="AddArtistButton_Click" />
 		<br />
 		<asp:Panel ID="ArtistAddPanel" runat="server">
             <br />
             <br />
-            <asp:Label ID="Label1" runat="server" Text="Panel dodawania wykonawcy" Font-Bold="True" Font-Names="Sitka Text" Font-Size="Large"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Add album panel" Font-Bold="True" Font-Names="Sitka Text" Font-Size="Large"></asp:Label>
             <br />
             <br />
             <asp:Label ID="Label2" runat="server" Text="Pseudonim"></asp:Label>
@@ -108,22 +108,22 @@
             <asp:TextBox ID="NickTb" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Label ID="Label3" runat="server" Text="Data urodzenia / powstania"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Text="Date of birth"></asp:Label>
             <br />
             <asp:Calendar ID="DataCalendar" runat="server"></asp:Calendar>
             <br />
-            <asp:Label ID="Label4" runat="server" Text="Gatunki"></asp:Label>
+            <asp:Label ID="Label4" runat="server" Text="Genres"></asp:Label>
             &nbsp;&nbsp;
             <asp:TextBox ID="GenresTb" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Label ID="Label5" runat="server" Text="Kraj pochodzenia"></asp:Label>
+            <asp:Label ID="Label5" runat="server" Text="Country of birth"></asp:Label>
             &nbsp;
             <asp:TextBox ID="CountryTb" runat="server"></asp:TextBox>
             <br />
             <br />
             <br />
-            <asp:Button ID="AddArtistButtonFromPanel" runat="server" Text="Dodaj " OnClick="AddArtistButtonFromPanel_Click" />
+            <asp:Button ID="AddArtistButtonFromPanel" runat="server" Text="Add" OnClick="AddArtistButtonFromPanel_Click" />
 		</asp:Panel>
 	</form>
 </body>

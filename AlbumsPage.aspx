@@ -93,23 +93,23 @@
 			<SortedDescendingHeaderStyle BackColor="#820000" />
 		</asp:GridView>
 		<p>
-			<asp:Button ID="AddAlbumButton" runat="server" OnClick="AddAlbumButton_Click" Text="Dodaj album" />
+			<asp:Button ID="AddAlbumButton" runat="server" OnClick="AddAlbumButton_Click" Text="Add album" />
         </p>
 		<asp:Panel ID="AddAlbumPanel" runat="server">
-			<asp:Label ID="Label1" runat="server" Text="Panel dodawania albumu" Font-Bold="True" Font-Names="Sitka Text" Font-Size="Large"></asp:Label>
+			<asp:Label ID="Label1" runat="server" Text="Add album panel" Font-Bold="True" Font-Names="Sitka Text" Font-Size="Large"></asp:Label>
 			<br />
 			<br />
-			<asp:Label ID="Label2" runat="server" Text="Tytuł"></asp:Label>
+			<asp:Label ID="Label2" runat="server" Text="Title"></asp:Label>
 			&nbsp;&nbsp;
 			<asp:TextBox ID="TitleTb" runat="server"></asp:TextBox>
 			<br />
 			<br />
-			<asp:Label ID="Label3" runat="server" Text="Gatunki"></asp:Label>
+			<asp:Label ID="Label3" runat="server" Text="Genres"></asp:Label>
 			&nbsp;&nbsp;
 			<asp:TextBox ID="GenresTb" runat="server"></asp:TextBox>
 			<br />
 			<br />
-			<asp:Label ID="Label4" runat="server" Text="Długość"></asp:Label>
+			<asp:Label ID="Label4" runat="server" Text="Length"></asp:Label>
 			&nbsp;&nbsp;
 			<asp:TextBox ID="MinTb" runat="server" Width="50px"></asp:TextBox>
 			&nbsp; min
@@ -117,16 +117,16 @@
 			&nbsp;s
 			<br />
 			<br />
-			<asp:Label ID="Label5" runat="server" Text="Data wydania"></asp:Label>
+			<asp:Label ID="Label5" runat="server" Text="Release date"></asp:Label>
 			&nbsp;<br />
 			<asp:Calendar ID="DateCalendar" runat="server"></asp:Calendar>
 			<br />
-			Artysta&nbsp;&nbsp;&nbsp;
+			Artist&nbsp;&nbsp;&nbsp;
 			<asp:DropDownList ID="ArtistDropdown" runat="server" DataSourceID="SqlDataSource2" DataTextField="Name" DataValueField="Name">
 			</asp:DropDownList>
 			<br />
 			<br />
-			<asp:Button ID="AddAlbumButtonFromPanel" runat="server" OnClick="AddArtistButtonFromPanel_Click" Text="Dodaj " />
+			<asp:Button ID="AddAlbumButtonFromPanel" runat="server" OnClick="AddArtistButtonFromPanel_Click" Text="Add" />
 			<br />
 			<br />
 			<br />
