@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title></title>
 	<style type="text/css">
-	 #songsButton, #artistsButton, #albumsButton, #aboutAuthorButton, #AddArtistButtonFromPanel {
+	 #songsButton, #artistsButton, #albumsButton, #aboutAuthorButton, #AddArtistButtonFromPanel, #EditRecordButtonFromPanel {
 			box-shadow:inset 0px 1px 0px 0px #f5978e;
 			background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
 			background-color:#f24537;
@@ -23,15 +23,17 @@
 			text-decoration:none;
 			text-shadow:0px 1px 0px #810e05;
 		}
-		#songsButton:hover, #artistsButton:hover, #albumsButton:hover, #aboutAuthorButton:hover, #AddArtistButtonFromPanel:hover {
+		#songsButton:hover, #artistsButton:hover, #albumsButton:hover, #aboutAuthorButton:hover, #AddArtistButtonFromPanel:hover,
+		#EditRecordButtonFromPanel:hover{
 			background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
 			background-color:#c62d1f;
 		}
-		#songsButton:active, #artistsButton:active, #albumsButton:active, #aboutAuthorButton:active, #AddArtistButtonFromPanel:active {
+		#songsButton:active, #artistsButton:active, #albumsButton:active, #aboutAuthorButton:active, #AddArtistButtonFromPanel:active,
+		#EditRecordButtonFromPanel:active{
 			position:relative;
 			top:1px;
 		}
-		#logoutButton, #AddArtistButton {
+		#logoutButton, #AddArtistButton, #EditRecordButton {
 			box-shadow:inset 0px 1px 0px 0px #9fb4f2;
 			background-color:#7892c2;
 			border-radius:9px;
@@ -47,11 +49,11 @@
 			text-shadow:0px 1px 0px #283966;
 			margin-top: 12px;
 		}
-		#logoutButton:hover, #AddArtistButton:hover {
+		#logoutButton:hover, #AddArtistButton:hover, #EditRecordButton:hover {
 			background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
 			background-color:#476e9e;
 		}
-		#logoutButton:active, #AddArtistButton:active {
+		#logoutButton:active, #AddArtistButton:active, #EditRecordButton:active {
 			position:relative;
 			top:1px;
 		}
@@ -75,14 +77,29 @@
 		</asp:Panel>
 		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artists]"></asp:SqlDataSource>
 		<br />
-		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="257px" Width="892px">
+		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="257px" Width="892px" AllowPaging="True" AllowSorting="True">
 			<AlternatingRowStyle BackColor="White" />
 			<Columns>
-				<asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-				<asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-				<asp:BoundField DataField="DateOfBirth" HeaderText="Date of birth" SortExpression="DateOfBirth" />
-				<asp:BoundField DataField="Genres" HeaderText="Genres" SortExpression="Genres" />
-				<asp:BoundField DataField="CountryOfBirth" HeaderText="Country of birth" SortExpression="CountryOfBirth" />
+				<asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" >
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+				</asp:BoundField>
+				<asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" >
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+				</asp:BoundField>
+				<asp:BoundField DataField="DateOfBirth" HeaderText="Date of birth" SortExpression="DateOfBirth" >
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+				</asp:BoundField>
+				<asp:BoundField DataField="Genres" HeaderText="Genres" SortExpression="Genres" >
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+				</asp:BoundField>
+				<asp:BoundField DataField="CountryOfBirth" HeaderText="Country of birth" SortExpression="CountryOfBirth" >
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+				</asp:BoundField>
 			</Columns>
 			<FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
 			<HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -98,33 +115,34 @@
 		<asp:Button ID="AddArtistButton" runat="server" Text="Add artist" OnClick="AddArtistButton_Click" />
 		<br />
 		<asp:Panel ID="ArtistAddPanel" runat="server">
-            <br />
-            <br />
-            <asp:Label ID="Label1" runat="server" Text="Add album panel" Font-Bold="True" Font-Names="Sitka Text" Font-Size="Large"></asp:Label>
-            <br />
-            <br />
-            <asp:Label ID="Label2" runat="server" Text="Pseudonim"></asp:Label>
-            &nbsp;&nbsp;
-            <asp:TextBox ID="NickTb" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="Label3" runat="server" Text="Date of birth"></asp:Label>
-            <br />
-            <asp:Calendar ID="DataCalendar" runat="server"></asp:Calendar>
-            <br />
-            <asp:Label ID="Label4" runat="server" Text="Genres"></asp:Label>
-            &nbsp;&nbsp;
-            <asp:TextBox ID="GenresTb" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="Label5" runat="server" Text="Country of birth"></asp:Label>
-            &nbsp;
-            <asp:TextBox ID="CountryTb" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <br />
-            <asp:Button ID="AddArtistButtonFromPanel" runat="server" Text="Add" OnClick="AddArtistButtonFromPanel_Click" />
+			<br />
+			<br />
+			<asp:Label ID="Label1" runat="server" Text="Add artist panel" Font-Bold="True" Font-Names="Sitka Text" Font-Size="Large"></asp:Label>
+			<br />
+			<br />
+			<asp:Label ID="Label2" runat="server" Text="Pseudonim"></asp:Label>
+			&nbsp;&nbsp;
+			<asp:TextBox ID="NickTb" runat="server"></asp:TextBox>
+			<br />
+			<br />
+			<asp:Label ID="Label3" runat="server" Text="Date of birth"></asp:Label>
+			<br />
+			<asp:Calendar ID="DataCalendar" runat="server"></asp:Calendar>
+			<br />
+			<asp:Label ID="Label4" runat="server" Text="Genres"></asp:Label>
+			&nbsp;&nbsp;
+			<asp:TextBox ID="GenresTb" runat="server"></asp:TextBox>
+			<br />
+			<br />
+			<asp:Label ID="Label5" runat="server" Text="Country of birth"></asp:Label>
+			&nbsp;
+			<asp:TextBox ID="CountryTb" runat="server"></asp:TextBox>
+			<br />
+			<br />
+			<br />
+			<asp:Button ID="AddArtistButtonFromPanel" runat="server" Text="Add" OnClick="AddArtistButtonFromPanel_Click" />
 		</asp:Panel>
+		<br />
 	</form>
 </body>
 </html>

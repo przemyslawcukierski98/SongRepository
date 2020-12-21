@@ -76,6 +76,7 @@
     <Content Include="ArtistsPage.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\musicMainPage.jpg" />
+    <Content Include="Images\myPhoto.png" />
     <Content Include="MainPage.aspx" />
     <Content Include="SongsPage.aspx" />
     <Content Include="Web.config" />

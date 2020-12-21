@@ -80,7 +80,7 @@
 		</asp:Panel>
 		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Songs]"></asp:SqlDataSource>
 		<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Albums]"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artists]"></asp:SqlDataSource>
+		<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artists]"></asp:SqlDataSource>
 		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="242px" Width="813px">
 			<Columns>
 				<asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
@@ -104,53 +104,53 @@
 		<p>
 			<asp:Button ID="AddSongButton" runat="server" OnClick="AddAlbumButton_Click" Text="Add song" />
 		</p>
-        <asp:Panel ID="AddSongPanel" runat="server">
-            <asp:Label ID="Label1" runat="server" Text="Add song panel" Font-Bold="True" Font-Names="Sitka Text" Font-Size="Large"></asp:Label>
-            <br />
-            <br />
-            <asp:Label ID="Label2" runat="server" Text="Name"></asp:Label>
-            &nbsp;&nbsp;
-            <asp:TextBox ID="NameTb" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="Label3" runat="server" Text="Length"></asp:Label>
-            &nbsp;
-            <asp:TextBox ID="MinTb" runat="server" Width="38px"></asp:TextBox>
-            &nbsp;
-            <asp:Label ID="Label4" runat="server" Text="min"></asp:Label>
-            &nbsp;
-            <asp:TextBox ID="SecTb" runat="server" Width="38px"></asp:TextBox>
-            &nbsp; s<br />
-            <br />
-            <asp:Label ID="Label5" runat="server" Text="Genres"></asp:Label>
-            &nbsp;
-            <asp:TextBox ID="GenresTb" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="Label6" runat="server" Text="Tempo"></asp:Label>
-            &nbsp;
-            <asp:DropDownList ID="TempoDropdown" runat="server" Width="167px">
-                <asp:ListItem>Slow</asp:ListItem>
-                <asp:ListItem>Medium</asp:ListItem>
-                <asp:ListItem>Fast</asp:ListItem>
-            </asp:DropDownList>
-            <br />
-            <br />
-            <asp:Label ID="Label7" runat="server" Text="Album"></asp:Label>
-            &nbsp;
-            <asp:DropDownList ID="AlbumDropdown" runat="server" DataSourceID="SqlDataSource2" DataTextField="Title" DataValueField="Title">
-            </asp:DropDownList>
-            <br />
-            <br />
-            <asp:Label ID="Label8" runat="server" Text="Artist"></asp:Label>
-            &nbsp;&nbsp;
-            <asp:DropDownList ID="ArtistDropdown" runat="server" DataSourceID="SqlDataSource3" DataTextField="Name" DataValueField="Name">
-            </asp:DropDownList>
-            <br />
-            <br />
-            <br />
-            <asp:Button ID="AddSongButtonPanel" runat="server" Text="Add" OnClick="AddSongButtonPanel_Click" />
-        </asp:Panel>
+		<asp:Panel ID="AddSongPanel" runat="server">
+			<asp:Label ID="Label1" runat="server" Text="Add song panel" Font-Bold="True" Font-Names="Sitka Text" Font-Size="Large"></asp:Label>
+			<br />
+			<br />
+			<asp:Label ID="Label2" runat="server" Text="Name"></asp:Label>
+			&nbsp;&nbsp;
+			<asp:TextBox ID="NameTb" runat="server"></asp:TextBox>
+			<br />
+			<br />
+			<asp:Label ID="Label3" runat="server" Text="Length"></asp:Label>
+			&nbsp;
+			<asp:TextBox ID="MinTb" runat="server" Width="38px"></asp:TextBox>
+			&nbsp;
+			<asp:Label ID="Label4" runat="server" Text="min"></asp:Label>
+			&nbsp;
+			<asp:TextBox ID="SecTb" runat="server" Width="38px"></asp:TextBox>
+			&nbsp; s<br />
+			<br />
+			<asp:Label ID="Label5" runat="server" Text="Genres"></asp:Label>
+			&nbsp;
+			<asp:TextBox ID="GenresTb" runat="server"></asp:TextBox>
+			<br />
+			<br />
+			<asp:Label ID="Label6" runat="server" Text="Tempo"></asp:Label>
+			&nbsp;
+			<asp:DropDownList ID="TempoDropdown" runat="server" Width="167px">
+				<asp:ListItem>Slow</asp:ListItem>
+				<asp:ListItem>Medium</asp:ListItem>
+				<asp:ListItem>Fast</asp:ListItem>
+			</asp:DropDownList>
+			<br />
+			<br />
+			<asp:Label ID="Label7" runat="server" Text="Album"></asp:Label>
+			&nbsp;
+			<asp:DropDownList ID="AlbumDropdown" runat="server" DataSourceID="SqlDataSource2" DataTextField="Title" DataValueField="Title">
+			</asp:DropDownList>
+			<br />
+			<br />
+			<asp:Label ID="Label8" runat="server" Text="Artist"></asp:Label>
+			&nbsp;&nbsp;
+			<asp:DropDownList ID="ArtistDropdown" runat="server" DataSourceID="SqlDataSource3" DataTextField="Name" DataValueField="Name">
+			</asp:DropDownList>
+			<br />
+			<br />
+			<br />
+			<asp:Button ID="AddSongButtonPanel" runat="server" Text="Add" OnClick="AddSongButtonPanel_Click" />
+		</asp:Panel>
 	</form>
 </body>
 </html>

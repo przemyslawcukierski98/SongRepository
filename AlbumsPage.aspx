@@ -94,7 +94,7 @@
 		</asp:GridView>
 		<p>
 			<asp:Button ID="AddAlbumButton" runat="server" OnClick="AddAlbumButton_Click" Text="Add album" />
-        </p>
+		</p>
 		<asp:Panel ID="AddAlbumPanel" runat="server">
 			<asp:Label ID="Label1" runat="server" Text="Add album panel" Font-Bold="True" Font-Names="Sitka Text" Font-Size="Large"></asp:Label>
 			<br />

@@ -33,5 +33,20 @@ namespace SongRepository
         {
             Response.Redirect("AboutMePage.aspx");
         }
+
+        protected void FacebookButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.facebook.com/profile.php?id=100048236260742");
+        }
+
+        protected void GithubButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/przemyslawcukierski98?tab=repositories");
+        }
+
+        protected void LinkedInButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.linkedin.com/in/przemysław-cukierski/");
+        }
     }
 }
