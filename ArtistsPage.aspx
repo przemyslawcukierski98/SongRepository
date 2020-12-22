@@ -75,30 +75,38 @@
 		<asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center">
 			<asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" HorizontalAlign="center" Text="List of artists" Font-Names="Sitka Text"></asp:Label>
 		</asp:Panel>
-		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artists]"></asp:SqlDataSource>
+		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artists]" DeleteCommand="DELETE FROM [Artists] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Artists] ([Name], [DateOfBirth], [Genres], [CountryOfBirth]) VALUES (@Name, @DateOfBirth, @Genres, @CountryOfBirth)" UpdateCommand="UPDATE [Artists] SET [Name] = @Name, [DateOfBirth] = @DateOfBirth, [Genres] = @Genres, [CountryOfBirth] = @CountryOfBirth WHERE [Id] = @Id">
+            <DeleteParameters>
+                <asp:Parameter Name="Id" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="Name" Type="String" />
+                <asp:Parameter Name="DateOfBirth" Type="String" />
+                <asp:Parameter Name="Genres" Type="String" />
+                <asp:Parameter Name="CountryOfBirth" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="Name" Type="String" />
+                <asp:Parameter Name="DateOfBirth" Type="String" />
+                <asp:Parameter Name="Genres" Type="String" />
+                <asp:Parameter Name="CountryOfBirth" Type="String" />
+                <asp:Parameter Name="Id" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
 		<br />
 		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="257px" Width="892px" AllowPaging="True" AllowSorting="True">
 			<AlternatingRowStyle BackColor="White" />
 			<Columns>
-				<asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" >
-					<HeaderStyle HorizontalAlign="Center" />
-					<ItemStyle HorizontalAlign="Center" />
+				<asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+				<asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" InsertVisible="False" >
 				</asp:BoundField>
 				<asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" >
-					<HeaderStyle HorizontalAlign="Center" />
-					<ItemStyle HorizontalAlign="Center" />
 				</asp:BoundField>
-				<asp:BoundField DataField="DateOfBirth" HeaderText="Date of birth" SortExpression="DateOfBirth" >
-					<HeaderStyle HorizontalAlign="Center" />
-					<ItemStyle HorizontalAlign="Center" />
+				<asp:BoundField DataField="DateOfBirth" HeaderText="DateOfBirth" SortExpression="DateOfBirth" >
 				</asp:BoundField>
 				<asp:BoundField DataField="Genres" HeaderText="Genres" SortExpression="Genres" >
-					<HeaderStyle HorizontalAlign="Center" />
-					<ItemStyle HorizontalAlign="Center" />
 				</asp:BoundField>
-				<asp:BoundField DataField="CountryOfBirth" HeaderText="Country of birth" SortExpression="CountryOfBirth" >
-					<HeaderStyle HorizontalAlign="Center" />
-					<ItemStyle HorizontalAlign="Center" />
+				<asp:BoundField DataField="CountryOfBirth" HeaderText="CountryOfBirth" SortExpression="CountryOfBirth" >
 				</asp:BoundField>
 			</Columns>
 			<FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

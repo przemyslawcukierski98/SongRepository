@@ -68,5 +68,10 @@ namespace SongRepository
                 AddAlbumPanel.Visible = true;
             }
         }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }

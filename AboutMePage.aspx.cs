@@ -16,7 +16,7 @@ namespace SongRepository
 
         protected void artistsButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AristsPage.aspx");
+            Response.Redirect("ArtistsPage.aspx");
         }
 
         protected void songsButton_Click(object sender, EventArgs e)

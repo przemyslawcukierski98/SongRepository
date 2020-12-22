@@ -78,11 +78,33 @@
 			<br />
 			<br />
 		</asp:Panel>
-		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Songs]"></asp:SqlDataSource>
+		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Songs]" DeleteCommand="DELETE FROM [Songs] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Songs] ([Name], [Length], [Genre], [Tempo], [AlbumName], [ArtistName]) VALUES (@Name, @Length, @Genre, @Tempo, @AlbumName, @ArtistName)" UpdateCommand="UPDATE [Songs] SET [Name] = @Name, [Length] = @Length, [Genre] = @Genre, [Tempo] = @Tempo, [AlbumName] = @AlbumName, [ArtistName] = @ArtistName WHERE [Id] = @Id">
+            <DeleteParameters>
+                <asp:Parameter Name="Id" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="Name" Type="String" />
+                <asp:Parameter Name="Length" Type="String" />
+                <asp:Parameter Name="Genre" Type="String" />
+                <asp:Parameter Name="Tempo" Type="String" />
+                <asp:Parameter Name="AlbumName" Type="String" />
+                <asp:Parameter Name="ArtistName" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="Name" Type="String" />
+                <asp:Parameter Name="Length" Type="String" />
+                <asp:Parameter Name="Genre" Type="String" />
+                <asp:Parameter Name="Tempo" Type="String" />
+                <asp:Parameter Name="AlbumName" Type="String" />
+                <asp:Parameter Name="ArtistName" Type="String" />
+                <asp:Parameter Name="Id" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
 		<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Albums]"></asp:SqlDataSource>
 		<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artists]"></asp:SqlDataSource>
-		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="242px" Width="813px">
+		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="242px" Width="813px" AllowSorting="True">
 			<Columns>
+				<asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
 				<asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
 				<asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
 				<asp:BoundField DataField="Length" HeaderText="Length" SortExpression="Length" />

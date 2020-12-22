@@ -70,17 +70,37 @@
 		<asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center">
 			<asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" HorizontalAlign="center" Text="List of albums" Font-Names="Sitka Text"></asp:Label>
 		</asp:Panel>
-		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Albums]"></asp:SqlDataSource>
+		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Albums]" DeleteCommand="DELETE FROM [Albums] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Albums] ([Title], [Genre], [Length], [ReleaseDate], [ArtistName]) VALUES (@Title, @Genre, @Length, @ReleaseDate, @ArtistName)" OnSelecting="SqlDataSource1_Selecting" UpdateCommand="UPDATE [Albums] SET [Title] = @Title, [Genre] = @Genre, [Length] = @Length, [ReleaseDate] = @ReleaseDate, [ArtistName] = @ArtistName WHERE [Id] = @Id">
+            <DeleteParameters>
+                <asp:Parameter Name="Id" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="Title" Type="String" />
+                <asp:Parameter Name="Genre" Type="String" />
+                <asp:Parameter Name="Length" Type="String" />
+                <asp:Parameter Name="ReleaseDate" Type="String" />
+                <asp:Parameter Name="ArtistName" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="Title" Type="String" />
+                <asp:Parameter Name="Genre" Type="String" />
+                <asp:Parameter Name="Length" Type="String" />
+                <asp:Parameter Name="ReleaseDate" Type="String" />
+                <asp:Parameter Name="ArtistName" Type="String" />
+                <asp:Parameter Name="Id" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
 		<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artists]"></asp:SqlDataSource>
-		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="306px" Width="902px">
+		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="306px" Width="902px" AllowSorting="True">
 			<AlternatingRowStyle BackColor="White" />
 			<Columns>
+				<asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
 				<asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
-				<asp:BoundField DataField="Title" HeaderText="Album name" SortExpression="Title" />
+				<asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
 				<asp:BoundField DataField="Genre" HeaderText="Genre" SortExpression="Genre" />
 				<asp:BoundField DataField="Length" HeaderText="Length" SortExpression="Length" />
-				<asp:BoundField DataField="ReleaseDate" HeaderText="Release date" SortExpression="ReleaseDate" />
-				<asp:BoundField DataField="ArtistName" HeaderText="Artist name" SortExpression="ArtistName" />
+				<asp:BoundField DataField="ReleaseDate" HeaderText="ReleaseDate" SortExpression="ReleaseDate" />
+				<asp:BoundField DataField="ArtistName" HeaderText="ArtistName" SortExpression="ArtistName" />
 			</Columns>
 			<FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
 			<HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
