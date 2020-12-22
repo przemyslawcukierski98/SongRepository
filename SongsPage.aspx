@@ -8,7 +8,7 @@
 	<title></title>
 	<style type="text/css">
 
-		#songsButton, #artistsButton, #albumsButton, #aboutAuthorButton, #AddSongButtonPanel {
+		#songsButton, #artistsButton, #albumsButton, #aboutAuthorButton, #AddSongButtonPanel, #playlistButton {
 			box-shadow:inset 0px 1px 0px 0px #f5978e;
 			background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
 			background-color:#f24537;
@@ -24,13 +24,13 @@
 			text-decoration:none;
 			text-shadow:0px 1px 0px #810e05;
 		}
-		#songsButton:hover, #artistsButton:hover, #albumsButton:hover, #aboutAuthorButton:,
+		#songsButton:hover, #artistsButton:hover, #albumsButton:hover, #aboutAuthorButton:hover, #playlistButton:hover,
 		#AddSongButtonPanel:hover{
 			background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
 			background-color:#c62d1f;
 		}
 		#songsButton:active, #artistsButton:active, #albumsButton:active, #aboutAuthorButton:active,
-		#AddSongButtonPanel:active{
+		#AddSongButtonPanel:active, #playlistButton:active{
 			position:relative;
 			top:1px;
 		}
@@ -66,6 +66,7 @@
 			<asp:Button ID="songsButton" runat="server" Text="Songs" Width="139px" Height="37px" />
 			<asp:Button ID="artistsButton" runat="server" Text="Artists" Width="139px" Height="37px" OnClick="artistsButton_Click" />
 			<asp:Button ID="albumsButton" runat="server" Text="Albums" Width="139px" Height="37px" OnClick="albumsButton_Click" />
+			<asp:Button ID="playlistButton" runat="server" Height="37px" OnClick="playlistButton_Click" Text="Playlists" />
 			<asp:Button ID="aboutAuthorButton" runat="server" Text="About me" Width="139px" Height="37px" OnClick="aboutAuthorButton_Click" />
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<asp:Button ID="logoutButton" runat="server" Text="Logout" Width="139px" Height="37px" />
@@ -79,27 +80,27 @@
 			<br />
 		</asp:Panel>
 		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Songs]" DeleteCommand="DELETE FROM [Songs] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Songs] ([Name], [Length], [Genre], [Tempo], [AlbumName], [ArtistName]) VALUES (@Name, @Length, @Genre, @Tempo, @AlbumName, @ArtistName)" UpdateCommand="UPDATE [Songs] SET [Name] = @Name, [Length] = @Length, [Genre] = @Genre, [Tempo] = @Tempo, [AlbumName] = @AlbumName, [ArtistName] = @ArtistName WHERE [Id] = @Id">
-            <DeleteParameters>
-                <asp:Parameter Name="Id" Type="Int32" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="Name" Type="String" />
-                <asp:Parameter Name="Length" Type="String" />
-                <asp:Parameter Name="Genre" Type="String" />
-                <asp:Parameter Name="Tempo" Type="String" />
-                <asp:Parameter Name="AlbumName" Type="String" />
-                <asp:Parameter Name="ArtistName" Type="String" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="Name" Type="String" />
-                <asp:Parameter Name="Length" Type="String" />
-                <asp:Parameter Name="Genre" Type="String" />
-                <asp:Parameter Name="Tempo" Type="String" />
-                <asp:Parameter Name="AlbumName" Type="String" />
-                <asp:Parameter Name="ArtistName" Type="String" />
-                <asp:Parameter Name="Id" Type="Int32" />
-            </UpdateParameters>
-        </asp:SqlDataSource>
+			<DeleteParameters>
+				<asp:Parameter Name="Id" Type="Int32" />
+			</DeleteParameters>
+			<InsertParameters>
+				<asp:Parameter Name="Name" Type="String" />
+				<asp:Parameter Name="Length" Type="String" />
+				<asp:Parameter Name="Genre" Type="String" />
+				<asp:Parameter Name="Tempo" Type="String" />
+				<asp:Parameter Name="AlbumName" Type="String" />
+				<asp:Parameter Name="ArtistName" Type="String" />
+			</InsertParameters>
+			<UpdateParameters>
+				<asp:Parameter Name="Name" Type="String" />
+				<asp:Parameter Name="Length" Type="String" />
+				<asp:Parameter Name="Genre" Type="String" />
+				<asp:Parameter Name="Tempo" Type="String" />
+				<asp:Parameter Name="AlbumName" Type="String" />
+				<asp:Parameter Name="ArtistName" Type="String" />
+				<asp:Parameter Name="Id" Type="Int32" />
+			</UpdateParameters>
+		</asp:SqlDataSource>
 		<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Albums]"></asp:SqlDataSource>
 		<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artists]"></asp:SqlDataSource>
 		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="242px" Width="813px" AllowSorting="True">

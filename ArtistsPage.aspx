@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title></title>
 	<style type="text/css">
-	 #songsButton, #artistsButton, #albumsButton, #aboutAuthorButton, #AddArtistButtonFromPanel, #EditRecordButtonFromPanel {
+	    #songsButton, #artistsButton, #albumsButton, #aboutAuthorButton, #AddArtistButtonFromPanel, #EditRecordButtonFromPanel, #playlistButton {
 			box-shadow:inset 0px 1px 0px 0px #f5978e;
 			background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
 			background-color:#f24537;
@@ -24,12 +24,12 @@
 			text-shadow:0px 1px 0px #810e05;
 		}
 		#songsButton:hover, #artistsButton:hover, #albumsButton:hover, #aboutAuthorButton:hover, #AddArtistButtonFromPanel:hover,
-		#EditRecordButtonFromPanel:hover{
+		#EditRecordButtonFromPanel:hover, #playlistButton:hover{
 			background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
 			background-color:#c62d1f;
 		}
 		#songsButton:active, #artistsButton:active, #albumsButton:active, #aboutAuthorButton:active, #AddArtistButtonFromPanel:active,
-		#EditRecordButtonFromPanel:active{
+		#EditRecordButtonFromPanel:active, #playlistButton:active{
 			position:relative;
 			top:1px;
 		}
@@ -65,6 +65,7 @@
 			<asp:Button ID="songsButton" runat="server" Text="Songs" Width="139px" Height="37px" OnClick="songsButton_Click" />
 			<asp:Button ID="artistsButton" runat="server" Text="Artists" Width="139px" Height="37px" OnClick="artistsButton_Click" />
 			<asp:Button ID="albumsButton" runat="server" Text="Albums" Width="139px" Height="37px" OnClick="albumsButton_Click" />
+			<asp:Button ID="playlistButton" runat="server" Height="37px" OnClick="playlistButton_Click" Text="Playlists" />
 			<asp:Button ID="aboutAuthorButton" runat="server" Text="About me" Width="139px" Height="37px" OnClick="aboutAuthorButton_Click" />
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<asp:Button ID="logoutButton" runat="server" Text="Logout" Width="139px" Height="37px" />
@@ -76,23 +77,23 @@
 			<asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" HorizontalAlign="center" Text="List of artists" Font-Names="Sitka Text"></asp:Label>
 		</asp:Panel>
 		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artists]" DeleteCommand="DELETE FROM [Artists] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Artists] ([Name], [DateOfBirth], [Genres], [CountryOfBirth]) VALUES (@Name, @DateOfBirth, @Genres, @CountryOfBirth)" UpdateCommand="UPDATE [Artists] SET [Name] = @Name, [DateOfBirth] = @DateOfBirth, [Genres] = @Genres, [CountryOfBirth] = @CountryOfBirth WHERE [Id] = @Id">
-            <DeleteParameters>
-                <asp:Parameter Name="Id" Type="Int32" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="Name" Type="String" />
-                <asp:Parameter Name="DateOfBirth" Type="String" />
-                <asp:Parameter Name="Genres" Type="String" />
-                <asp:Parameter Name="CountryOfBirth" Type="String" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="Name" Type="String" />
-                <asp:Parameter Name="DateOfBirth" Type="String" />
-                <asp:Parameter Name="Genres" Type="String" />
-                <asp:Parameter Name="CountryOfBirth" Type="String" />
-                <asp:Parameter Name="Id" Type="Int32" />
-            </UpdateParameters>
-        </asp:SqlDataSource>
+			<DeleteParameters>
+				<asp:Parameter Name="Id" Type="Int32" />
+			</DeleteParameters>
+			<InsertParameters>
+				<asp:Parameter Name="Name" Type="String" />
+				<asp:Parameter Name="DateOfBirth" Type="String" />
+				<asp:Parameter Name="Genres" Type="String" />
+				<asp:Parameter Name="CountryOfBirth" Type="String" />
+			</InsertParameters>
+			<UpdateParameters>
+				<asp:Parameter Name="Name" Type="String" />
+				<asp:Parameter Name="DateOfBirth" Type="String" />
+				<asp:Parameter Name="Genres" Type="String" />
+				<asp:Parameter Name="CountryOfBirth" Type="String" />
+				<asp:Parameter Name="Id" Type="Int32" />
+			</UpdateParameters>
+		</asp:SqlDataSource>
 		<br />
 		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="257px" Width="892px" AllowPaging="True" AllowSorting="True">
 			<AlternatingRowStyle BackColor="White" />

@@ -65,5 +65,10 @@ namespace SongRepository
             connection.Close();
             Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
+
+        protected void playlistButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PlaylistsPage.aspx");
+        }
     }
 }

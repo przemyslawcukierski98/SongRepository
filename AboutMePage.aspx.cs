@@ -48,5 +48,10 @@ namespace SongRepository
         {
             System.Diagnostics.Process.Start("https://www.linkedin.com/in/przemysław-cukierski/");
         }
+
+        protected void playlistButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PlaylistsPage.aspx");
+        }
     }
 }

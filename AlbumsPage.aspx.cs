@@ -73,5 +73,10 @@ namespace SongRepository
         {
 
         }
+
+        protected void playlistButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PlaylistsPage.aspx");
+        }
     }
 }

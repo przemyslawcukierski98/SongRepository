@@ -78,6 +78,7 @@
     <Content Include="Images\musicMainPage.jpg" />
     <Content Include="Images\myPhoto.png" />
     <Content Include="MainPage.aspx" />
+    <Content Include="PlaylistsPage.aspx" />
     <Content Include="SongsPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -112,6 +113,13 @@
     </Compile>
     <Compile Include="MainPage.aspx.designer.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PlaylistsPage.aspx.cs">
+      <DependentUpon>PlaylistsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlaylistsPage.aspx.designer.cs">
+      <DependentUpon>PlaylistsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SongsPage.aspx.cs">
