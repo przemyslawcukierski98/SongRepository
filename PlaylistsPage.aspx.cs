@@ -38,5 +38,37 @@ namespace SongRepository
         {
             Response.Redirect("AboutMePage.aspx");
         }
+
+        protected void SelectNumberOfSongsButton_Click(object sender, EventArgs e)
+        {
+            if(HowManySongsRadioList.SelectedValue == "3")
+            {
+                FirstSongsPanel.Visible = true;
+                SecondSongsPanel.Visible = false;
+                ThirdSongsPanel.Visible = false;
+                FourthSongsPanel.Visible = false;
+            }
+            else if(HowManySongsRadioList.SelectedValue == "5")
+            {
+                FirstSongsPanel.Visible = true;
+                SecondSongsPanel.Visible = true;
+                ThirdSongsPanel.Visible = false;
+                FourthSongsPanel.Visible = false;
+            }
+            else if(HowManySongsRadioList.SelectedValue == "7")
+            {
+                FirstSongsPanel.Visible = true;
+                SecondSongsPanel.Visible = true;
+                ThirdSongsPanel.Visible = true;
+                FourthSongsPanel.Visible = false;
+            }
+            else if(HowManySongsRadioList.SelectedValue == "10")
+            {
+                FirstSongsPanel.Visible = true;
+                SecondSongsPanel.Visible = true;
+                ThirdSongsPanel.Visible = true;
+                FourthSongsPanel.Visible = true;
+            }
+        }
     }
 }

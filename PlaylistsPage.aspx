@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
+	<title></title>
+	<style type="text/css">
 
 		#songsButton, #artistsButton, #albumsButton, #aboutAuthorButton, #playlistButton {
 			box-shadow:inset 0px 1px 0px 0px #f5978e;
@@ -33,7 +33,7 @@
 			top:1px;
 		}
 
-		#logoutButton, #AddPlaylistButton, #AddPlaylistButtonFromPanel {
+		#logoutButton, #AddPlaylistButton, #AddPlaylistButtonFromPanel, #SelectNumberOfSongsButton {
 			box-shadow:inset 0px 1px 0px 0px #9fb4f2;
 			background-color:#7892c2;
 			border-radius:9px;
@@ -49,19 +49,19 @@
 			text-shadow:0px 1px 0px #283966;
 			margin-top: 12px;
 		}
-		#logoutButton:hover, #AddPlaylistButton:hover, #AddPlaylistButtonFromPanel:hover {
+		#logoutButton:hover, #AddPlaylistButton:hover, #AddPlaylistButtonFromPanel:hover, #SelectNumberOfSongsButton:hover {
 			background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
 			background-color:#476e9e;
 		}
-		#logoutButton:active, #AddPlaylistButton:active, #AddPlaylistButtonFromPanel:active {
+		#logoutButton:active, #AddPlaylistButton:active, #AddPlaylistButtonFromPanel:active, #SelectNumberOfSongsButton:active {
 			position:relative;
 			top:1px;
 		}
 		</style>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
+	<form id="form1" runat="server">
+		<div>
 			<asp:Button ID="songsButton" runat="server" Text="Songs" Width="139px" Height="37px" OnClick="songsButton_Click" />
 			<asp:Button ID="artistsButton" runat="server" Text="Artists" Width="139px" Height="37px" OnClick="artistsButton_Click" />
 			<asp:Button ID="albumsButton" runat="server" Text="Albums" Width="139px" Height="37px" OnClick="albumsButton_Click" />
@@ -69,85 +69,114 @@
 			<asp:Button ID="aboutAuthorButton" runat="server" Text="About me" Width="139px" Height="37px" OnClick="aboutAuthorButton_Click" />
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<asp:Button ID="logoutButton" runat="server" Text="Logout" Width="120px" Height="37px" style="margin-left: 0px" />
-        </div>
-        <asp:Panel ID="Panel2" runat="server" HorizontalAlign="Center">
-            <br />
-            <asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" HorizontalAlign="center" Text="Make your playlist" Font-Names="Sitka Text"></asp:Label>
-        </asp:Panel>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Songs]"></asp:SqlDataSource>
-        <p>
+		</div>
+		<asp:Panel ID="Panel2" runat="server" HorizontalAlign="Center">
+			<br />
+			<asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" HorizontalAlign="center" Text="Make your playlist" Font-Names="Sitka Text"></asp:Label>
+		</asp:Panel>
+		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Songs]"></asp:SqlDataSource>
+		<p>
 			<asp:Label ID="titleLabel0" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Blue" HorizontalAlign="center" Text="How many songs should the playlist have?" Font-Names="Sitka Text"></asp:Label>
 		</p>
-        <asp:RadioButtonList ID="HowManySongsRadioList" runat="server">
-            <asp:ListItem>3</asp:ListItem>
-            <asp:ListItem>5</asp:ListItem>
-            <asp:ListItem>7</asp:ListItem>
-            <asp:ListItem>10</asp:ListItem>
-        </asp:RadioButtonList>
+		<asp:RadioButtonList ID="HowManySongsRadioList" runat="server">
+			<asp:ListItem>3</asp:ListItem>
+			<asp:ListItem>5</asp:ListItem>
+			<asp:ListItem>7</asp:ListItem>
+			<asp:ListItem>10</asp:ListItem>
+		</asp:RadioButtonList>
+		<br />
+		<asp:Button ID="SelectNumberOfSongsButton" runat="server" Text="Select" OnClick="SelectNumberOfSongsButton_Click" />
         <br />
-        <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="1. "></asp:Label>
-&nbsp;
-        <asp:DropDownList ID="FirstSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-        </asp:DropDownList>
-&nbsp;<p>
+        <br />
+		<br />
+			<asp:Label ID="titleLabel1" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Blue" HorizontalAlign="center" Text="Which songs do you want to add to the playlist?" Font-Names="Sitka Text"></asp:Label>
+		<br />
+		<br />
+        <br />
+		<asp:Panel ID="FirstSongsPanel" runat="server" Height="151px" style="margin-top: 0px">
+            <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="1. "></asp:Label>
+            &nbsp;
+            <asp:DropDownList ID="FirstSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+            </asp:DropDownList>
+            <br />
+            <br />
             <asp:Label ID="Label2" runat="server" Font-Bold="True" Text="2. "></asp:Label>
 &nbsp;
-            <asp:DropDownList ID="SecondSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+            <asp:DropDownList ID="SecondSongDropDown0" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
             </asp:DropDownList>
-        </p>
-        <p>
+            <br />
+            <br />
             <asp:Label ID="Label3" runat="server" Font-Bold="True" Text="3."></asp:Label>
-&nbsp;&nbsp;
+            &nbsp;&nbsp;
             <asp:DropDownList ID="ThirdSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
             </asp:DropDownList>
-        </p>
-        <p>
-            <asp:Label ID="Label4" runat="server" Font-Bold="True" Text="4."></asp:Label>
-&nbsp;&nbsp;
-            <asp:DropDownList ID="FourthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-            </asp:DropDownList>
-        </p>
-        <p>
-            <asp:Label ID="Label5" runat="server" Font-Bold="True" Text="5."></asp:Label>
-&nbsp;&nbsp;
-            <asp:DropDownList ID="FifthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-            </asp:DropDownList>
-        </p>
-        <p>
-            <asp:Label ID="Label6" runat="server" Font-Bold="True" Text="6."></asp:Label>
-&nbsp;&nbsp;
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <asp:Panel ID="ThirdSongsPanel" runat="server" Height="139px" style="margin-top: 46px">
+                <br />
+                <br />
+                <asp:Label ID="Label8" runat="server" Font-Bold="True" Text="6."></asp:Label>
+                &nbsp;
+                <asp:DropDownList ID="EighthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+                </asp:DropDownList>
+                <br />
+                <br />
+                <asp:Label ID="Label9" runat="server" Font-Bold="True" Text="7."></asp:Label>
+                &nbsp;&nbsp;
+                <asp:DropDownList ID="NinethSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+                </asp:DropDownList>
+                <br />
+                <br />
+                <br />
+            </asp:Panel>
+            <asp:Panel ID="FourthSongsPanel" runat="server" style="margin-top: 17px">
+                <br />
+                <asp:Label ID="Label4" runat="server" Font-Bold="True" Text="8."></asp:Label>
+                &nbsp;&nbsp;
+                <asp:DropDownList ID="FourthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+                </asp:DropDownList>
+                <br />
+                <br />
+                <asp:Label ID="Label5" runat="server" Font-Bold="True" Text="9."></asp:Label>
+                &nbsp;&nbsp;
+                <asp:DropDownList ID="FifthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+                </asp:DropDownList>
+                <br />
+                <br />
+                <asp:Label ID="Label10" runat="server" Font-Bold="True" Text="10."></asp:Label>
+                &nbsp;
+                <asp:DropDownList ID="TenthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+                </asp:DropDownList>
+            </asp:Panel>
+            <br />
+            <br />
+            <asp:Button ID="AddPlaylistButton" runat="server" Text="Add playlist" />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </asp:Panel>
+        <asp:Panel ID="SecondSongsPanel" runat="server" Height="93px" style="margin-top: 17px">
+            <asp:Label ID="Label6" runat="server" Font-Bold="True" Text="4."></asp:Label>
+            &nbsp;&nbsp;
             <asp:DropDownList ID="SixthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
             </asp:DropDownList>
-        </p>
-        <p>
-            <asp:Label ID="Label7" runat="server" Font-Bold="True" Text="7."></asp:Label>
-&nbsp;&nbsp;
+            <br />
+            <br />
+            <asp:Label ID="Label7" runat="server" Font-Bold="True" Text="5."></asp:Label>
+            &nbsp;&nbsp;
             <asp:DropDownList ID="SeventhSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Id">
             </asp:DropDownList>
-        </p>
-        <p>
-            <asp:Label ID="Label8" runat="server" Font-Bold="True" Text="8. "></asp:Label>
-&nbsp;
-            <asp:DropDownList ID="EighthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-            </asp:DropDownList>
-        </p>
-        <p>
-            <asp:Label ID="Label9" runat="server" Font-Bold="True" Text="9."></asp:Label>
-&nbsp;&nbsp;
-            <asp:DropDownList ID="NinethSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-            </asp:DropDownList>
-        </p>
-        <p>
-            <asp:Label ID="Label10" runat="server" Font-Bold="True" Text="10."></asp:Label>
-&nbsp;&nbsp;
-            <asp:DropDownList ID="TenthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-            </asp:DropDownList>
-        </p>
+            <br />
+            <br />
+            <br />
+        </asp:Panel>
         <p>
             &nbsp;</p>
-        <p>
-            <asp:Button ID="AddPlaylistButton" runat="server" Text="Add playlist" />
-        </p>
-    </form>
+	</form>
 </body>
 </html>
