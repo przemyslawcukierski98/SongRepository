@@ -13,5 +13,30 @@ namespace SongRepository
         {
 
         }
+
+        protected void songsButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SongsPage.aspx");
+        }
+
+        protected void artistsButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ArtistsPage.aspx");
+        }
+
+        protected void albumsButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AlbumsPage.aspx");
+        }
+
+        protected void playlistButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PlaylistsPage.aspx");
+        }
+
+        protected void aboutAuthorButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AboutMePage.aspx");
+        }
     }
 }
