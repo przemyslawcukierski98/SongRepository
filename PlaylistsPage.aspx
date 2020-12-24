@@ -75,6 +75,7 @@
 			<asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" HorizontalAlign="center" Text="Make your playlist" Font-Names="Sitka Text"></asp:Label>
 		</asp:Panel>
 		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Songs]"></asp:SqlDataSource>
+		<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Table]"></asp:SqlDataSource>
 		<p>
 			<asp:Label ID="titleLabel0" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Blue" HorizontalAlign="center" Text="How many songs should the playlist have?" Font-Names="Sitka Text"></asp:Label>
 		</p>
@@ -85,98 +86,166 @@
 			<asp:ListItem>10</asp:ListItem>
 		</asp:RadioButtonList>
 		<br />
+        <asp:Label ID="Label11" runat="server" Text="Playlist name"></asp:Label>
+&nbsp;&nbsp;
+        <asp:TextBox ID="PlaylistNameTb" runat="server"></asp:TextBox>
+        <br />
+		<br />
 		<asp:Button ID="SelectNumberOfSongsButton" runat="server" Text="Select" OnClick="SelectNumberOfSongsButton_Click" />
-        <br />
-        <br />
+		<br />
+		<br />
 		<br />
 			<asp:Label ID="titleLabel1" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Blue" HorizontalAlign="center" Text="Which songs do you want to add to the playlist?" Font-Names="Sitka Text"></asp:Label>
 		<br />
 		<br />
-        <br />
-		<asp:Panel ID="FirstSongsPanel" runat="server" Height="151px" style="margin-top: 0px">
-            <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="1. "></asp:Label>
-            &nbsp;
-            <asp:DropDownList ID="FirstSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-            </asp:DropDownList>
-            <br />
-            <br />
-            <asp:Label ID="Label2" runat="server" Font-Bold="True" Text="2. "></asp:Label>
+		<br />
+		<asp:Panel runat="server" Height="151px" style="margin-top: 0px" ID="FirstSongsPanel">
+			<asp:Label ID="Label1" runat="server" Font-Bold="True" Text="1. "></asp:Label>
+			&nbsp;
+			<asp:DropDownList ID="FirstSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+			</asp:DropDownList>
+			<br />
+			<br />
+			<asp:Label ID="Label2" runat="server" Font-Bold="True" Text="2. "></asp:Label>
 &nbsp;
-            <asp:DropDownList ID="SecondSongDropDown0" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-            </asp:DropDownList>
+			<asp:DropDownList ID="SecondSongDropDown0" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+			</asp:DropDownList>
+			<br />
+			<br />
+			<asp:Label ID="Label3" runat="server" Font-Bold="True" Text="3."></asp:Label>
+			&nbsp;&nbsp;
+			<asp:DropDownList ID="ThirdSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+			</asp:DropDownList>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<asp:Panel ID="ThirdSongsPanel" runat="server" Height="139px" style="margin-top: 46px">
+				<br />
+				<br />
+				<asp:Label ID="Label8" runat="server" Font-Bold="True" Text="6."></asp:Label>
+				&nbsp;
+				<asp:DropDownList ID="EighthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+				</asp:DropDownList>
+				<br />
+				<br />
+				<asp:Label ID="Label9" runat="server" Font-Bold="True" Text="7."></asp:Label>
+				&nbsp;&nbsp;
+				<asp:DropDownList ID="NinethSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+				</asp:DropDownList>
+				<br />
+				<br />
+				<br />
+			</asp:Panel>
+			<asp:Panel ID="FourthSongsPanel" runat="server" style="margin-top: 17px">
+				<br />
+				<asp:Label ID="Label4" runat="server" Font-Bold="True" Text="8."></asp:Label>
+				&nbsp;&nbsp;
+				<asp:DropDownList ID="FourthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+				</asp:DropDownList>
+				<br />
+				<br />
+				<asp:Label ID="Label5" runat="server" Font-Bold="True" Text="9."></asp:Label>
+				&nbsp;&nbsp;
+				<asp:DropDownList ID="FifthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+				</asp:DropDownList>
+				<br />
+				<br />
+				<asp:Label ID="Label10" runat="server" Font-Bold="True" Text="10."></asp:Label>
+				&nbsp;
+				<asp:DropDownList ID="TenthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+				</asp:DropDownList>
+			</asp:Panel>
+			<br />
+			<br />
+			<asp:Button ID="AddPlaylistButton" runat="server" Text="Add playlist" OnClick="AddPlaylistButton_Click" />
+			<br />
+			<br />
+			<br />
+			<asp:Label ID="titleLabel2" runat="server" Font-Bold="True" Font-Names="Sitka Text" Font-Size="X-Large" ForeColor="Blue" HorizontalAlign="center" Text="Your playlists:"></asp:Label>
+			<br />
             <br />
-            <br />
-            <asp:Label ID="Label3" runat="server" Font-Bold="True" Text="3."></asp:Label>
-            &nbsp;&nbsp;
-            <asp:DropDownList ID="ThirdSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-            </asp:DropDownList>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <asp:Panel ID="ThirdSongsPanel" runat="server" Height="139px" style="margin-top: 46px">
-                <br />
-                <br />
-                <asp:Label ID="Label8" runat="server" Font-Bold="True" Text="6."></asp:Label>
-                &nbsp;
-                <asp:DropDownList ID="EighthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-                </asp:DropDownList>
-                <br />
-                <br />
-                <asp:Label ID="Label9" runat="server" Font-Bold="True" Text="7."></asp:Label>
-                &nbsp;&nbsp;
-                <asp:DropDownList ID="NinethSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-                </asp:DropDownList>
-                <br />
-                <br />
-                <br />
-            </asp:Panel>
-            <asp:Panel ID="FourthSongsPanel" runat="server" style="margin-top: 17px">
-                <br />
-                <asp:Label ID="Label4" runat="server" Font-Bold="True" Text="8."></asp:Label>
-                &nbsp;&nbsp;
-                <asp:DropDownList ID="FourthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-                </asp:DropDownList>
-                <br />
-                <br />
-                <asp:Label ID="Label5" runat="server" Font-Bold="True" Text="9."></asp:Label>
-                &nbsp;&nbsp;
-                <asp:DropDownList ID="FifthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-                </asp:DropDownList>
-                <br />
-                <br />
-                <asp:Label ID="Label10" runat="server" Font-Bold="True" Text="10."></asp:Label>
-                &nbsp;
-                <asp:DropDownList ID="TenthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-                </asp:DropDownList>
-            </asp:Panel>
-            <br />
-            <br />
-            <asp:Button ID="AddPlaylistButton" runat="server" Text="Add playlist" />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-        </asp:Panel>
-        <asp:Panel ID="SecondSongsPanel" runat="server" Height="93px" style="margin-top: 17px">
-            <asp:Label ID="Label6" runat="server" Font-Bold="True" Text="4."></asp:Label>
-            &nbsp;&nbsp;
-            <asp:DropDownList ID="SixthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
-            </asp:DropDownList>
-            <br />
-            <br />
-            <asp:Label ID="Label7" runat="server" Font-Bold="True" Text="5."></asp:Label>
-            &nbsp;&nbsp;
-            <asp:DropDownList ID="SeventhSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Id">
-            </asp:DropDownList>
-            <br />
-            <br />
-            <br />
-        </asp:Panel>
-        <p>
-            &nbsp;</p>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="276px" HorizontalAlign="Center" Width="1799px">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+                    <asp:BoundField DataField="PlaylistName" HeaderText="Playlist name" SortExpression="PlaylistName">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="FirstSongName" HeaderText="1. song" SortExpression="FirstSongName">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="SecondSongName" HeaderText="2. song" SortExpression="SecondSongName">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="ThirdSongName" HeaderText="3. song" SortExpression="ThirdSongName">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="FourthSongName" HeaderText="4. song" SortExpression="FourthSongName">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="FifthSongName" HeaderText="5. song" SortExpression="FifthSongName">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="SixthSongName" HeaderText="6. song" SortExpression="SixthSongName">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="SeventhSongName" HeaderText="7. song" SortExpression="SeventhSongName">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="EighthSongName" HeaderText="8. song" SortExpression="EighthSongName">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="NinethSongName" HeaderText="9. song" SortExpression="NinethSongName">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="TenthSongName" HeaderText="10. song" SortExpression="TenthSongName">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                </Columns>
+                <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                <SortedDescendingHeaderStyle BackColor="#820000" />
+            </asp:GridView>
+			<br />
+			<br />
+			<br />
+		</asp:Panel>
+		<asp:Panel ID="SecondSongsPanel" runat="server" Height="93px" style="margin-top: 17px">
+			<asp:Label ID="Label6" runat="server" Font-Bold="True" Text="4."></asp:Label>
+			&nbsp;&nbsp;
+			<asp:DropDownList ID="SixthSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
+			</asp:DropDownList>
+			<br />
+			<br />
+			<asp:Label ID="Label7" runat="server" Font-Bold="True" Text="5."></asp:Label>
+			&nbsp;&nbsp;
+			<asp:DropDownList ID="SeventhSongDropDown" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Id">
+			</asp:DropDownList>
+			<br />
+			<br />
+			<br />
+		</asp:Panel>
+		<p>
+			&nbsp;</p>
 	</form>
 </body>
 </html>

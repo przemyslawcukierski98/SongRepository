@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,9 +11,11 @@ namespace SongRepository
 {
     public partial class PlaylistsPage : System.Web.UI.Page
     {
+        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            connection.Open();
         }
 
         protected void songsButton_Click(object sender, EventArgs e)
@@ -69,6 +73,58 @@ namespace SongRepository
                 ThirdSongsPanel.Visible = true;
                 FourthSongsPanel.Visible = true;
             }
+        }
+
+        protected void AddPlaylistButton_Click(object sender, EventArgs e)
+        {
+            SqlCommand command = null;
+            string playlistName = PlaylistNameTb.Text;
+            string firstSongTitle = FirstSongDropDown.SelectedValue.ToString();
+            string secondSongTitle = SecondSongDropDown0.SelectedValue.ToString();
+            string thirdSongTitle = ThirdSongDropDown.SelectedValue.ToString();
+            string fourthSongTitle = FourthSongDropDown.SelectedValue.ToString();
+            string fifthSongTitle = FifthSongDropDown.SelectedValue.ToString();
+            string sixthSongTitle = SixthSongDropDown.SelectedValue.ToString();
+            string seventhSongTitle = SeventhSongDropDown.SelectedValue.ToString();
+            string eighthSongTitle = EighthSongDropDown.SelectedValue.ToString();
+            string ninethSongTitle = NinethSongDropDown.SelectedValue.ToString();
+            string tenthSongTitle = TenthSongDropDown.SelectedValue.ToString();
+
+            if(HowManySongsRadioList.SelectedValue == "3")
+            {
+                command = new SqlCommand("Insert into Table values ('"
+                + playlistName + "','" + firstSongTitle + "','" +
+                secondSongTitle + "','" + thirdSongTitle + "')", connection);
+            }
+            else if(HowManySongsRadioList.SelectedValue == "5")
+            {
+                command = new SqlCommand("Insert into Table values ('"
+                + playlistName + "','" + firstSongTitle + "','" +
+                secondSongTitle + "','" + thirdSongTitle + "','" +
+                fourthSongTitle + "','" + fifthSongTitle + "')", connection);
+            }
+            else if(HowManySongsRadioList.SelectedValue == "7")
+            {
+                command = new SqlCommand("Insert into Table values ('"
+                + playlistName + "','" + firstSongTitle + "','" +
+                secondSongTitle + "','" + thirdSongTitle + "','" + 
+                fourthSongTitle + "','" + fifthSongTitle + "','" +
+                sixthSongTitle + "','" + seventhSongTitle + "')", connection);
+            }
+            else if(HowManySongsRadioList.SelectedValue == "10")
+            {
+                command = new SqlCommand("Insert into Table values ('"
+                + playlistName + "','" + firstSongTitle + "','" +
+                secondSongTitle + "','" + thirdSongTitle + "','" +
+                fourthSongTitle + "','" + fifthSongTitle + "','" +
+                sixthSongTitle + "','" + seventhSongTitle + "','" +
+                eighthSongTitle + "','" + ninethSongTitle + "','" +
+                tenthSongTitle + "')", connection);
+            }
+
+            command.ExecuteNonQuery();
+            connection.Close();
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
     }
 }
