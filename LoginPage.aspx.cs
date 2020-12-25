@@ -13,5 +13,15 @@ namespace SongRepository
         {
 
         }
+
+        protected void SignInButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegisterPage.aspx");
+        }
+
+        protected void RegisterButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

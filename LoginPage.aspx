@@ -49,8 +49,8 @@
 			<br />
 			<br />
 			<br />
-			<asp:Button ID="RegisterButton" runat="server" Text="Register" Width="162px" />
-			<asp:Button ID="SignInButton" runat="server" Text="Log in to your account" Width="299px" />
+			<asp:Button ID="RegisterButton" runat="server" Text="Login" Width="162px" OnClick="RegisterButton_Click" />
+			<asp:Button ID="SignInButton" runat="server" Text="Sign up " Width="299px" OnClick="SignInButton_Click" />
 		</asp:Panel>
 	</form>
 </body>
