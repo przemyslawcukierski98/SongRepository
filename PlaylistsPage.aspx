@@ -86,10 +86,10 @@
 			<asp:ListItem>10</asp:ListItem>
 		</asp:RadioButtonList>
 		<br />
-        <asp:Label ID="Label11" runat="server" Text="Playlist name"></asp:Label>
+		<asp:Label ID="Label11" runat="server" Text="Playlist name"></asp:Label>
 &nbsp;&nbsp;
-        <asp:TextBox ID="PlaylistNameTb" runat="server"></asp:TextBox>
-        <br />
+		<asp:TextBox ID="PlaylistNameTb" runat="server"></asp:TextBox>
+		<br />
 		<br />
 		<asp:Button ID="SelectNumberOfSongsButton" runat="server" Text="Select" OnClick="SelectNumberOfSongsButton_Click" />
 		<br />
@@ -165,66 +165,66 @@
 			<br />
 			<asp:Label ID="titleLabel2" runat="server" Font-Bold="True" Font-Names="Sitka Text" Font-Size="X-Large" ForeColor="Blue" HorizontalAlign="center" Text="Your playlists:"></asp:Label>
 			<br />
-            <br />
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="276px" HorizontalAlign="Center" Width="1799px">
-                <AlternatingRowStyle BackColor="White" />
-                <Columns>
-                    <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-                    <asp:BoundField DataField="PlaylistName" HeaderText="Playlist name" SortExpression="PlaylistName">
-                    <HeaderStyle HorizontalAlign="Center" />
-                    <ItemStyle HorizontalAlign="Center" />
-                    </asp:BoundField>
-                    <asp:BoundField DataField="FirstSongName" HeaderText="1. song" SortExpression="FirstSongName">
-                    <HeaderStyle HorizontalAlign="Center" />
-                    <ItemStyle HorizontalAlign="Center" />
-                    </asp:BoundField>
-                    <asp:BoundField DataField="SecondSongName" HeaderText="2. song" SortExpression="SecondSongName">
-                    <HeaderStyle HorizontalAlign="Center" />
-                    <ItemStyle HorizontalAlign="Center" />
-                    </asp:BoundField>
-                    <asp:BoundField DataField="ThirdSongName" HeaderText="3. song" SortExpression="ThirdSongName">
-                    <HeaderStyle HorizontalAlign="Center" />
-                    <ItemStyle HorizontalAlign="Center" />
-                    </asp:BoundField>
-                    <asp:BoundField DataField="FourthSongName" HeaderText="4. song" SortExpression="FourthSongName">
-                    <HeaderStyle HorizontalAlign="Center" />
-                    <ItemStyle HorizontalAlign="Center" />
-                    </asp:BoundField>
-                    <asp:BoundField DataField="FifthSongName" HeaderText="5. song" SortExpression="FifthSongName">
-                    <HeaderStyle HorizontalAlign="Center" />
-                    <ItemStyle HorizontalAlign="Center" />
-                    </asp:BoundField>
-                    <asp:BoundField DataField="SixthSongName" HeaderText="6. song" SortExpression="SixthSongName">
-                    <HeaderStyle HorizontalAlign="Center" />
-                    <ItemStyle HorizontalAlign="Center" />
-                    </asp:BoundField>
-                    <asp:BoundField DataField="SeventhSongName" HeaderText="7. song" SortExpression="SeventhSongName">
-                    <HeaderStyle HorizontalAlign="Center" />
-                    <ItemStyle HorizontalAlign="Center" />
-                    </asp:BoundField>
-                    <asp:BoundField DataField="EighthSongName" HeaderText="8. song" SortExpression="EighthSongName">
-                    <HeaderStyle HorizontalAlign="Center" />
-                    <ItemStyle HorizontalAlign="Center" />
-                    </asp:BoundField>
-                    <asp:BoundField DataField="NinethSongName" HeaderText="9. song" SortExpression="NinethSongName">
-                    <HeaderStyle HorizontalAlign="Center" />
-                    <ItemStyle HorizontalAlign="Center" />
-                    </asp:BoundField>
-                    <asp:BoundField DataField="TenthSongName" HeaderText="10. song" SortExpression="TenthSongName">
-                    <HeaderStyle HorizontalAlign="Center" />
-                    <ItemStyle HorizontalAlign="Center" />
-                    </asp:BoundField>
-                </Columns>
-                <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-                <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-                <SortedAscendingCellStyle BackColor="#FDF5AC" />
-                <SortedAscendingHeaderStyle BackColor="#4D0000" />
-                <SortedDescendingCellStyle BackColor="#FCF6C0" />
-                <SortedDescendingHeaderStyle BackColor="#820000" />
-            </asp:GridView>
+			<br />
+			<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="276px" HorizontalAlign="Center" Width="1799px">
+				<AlternatingRowStyle BackColor="White" />
+				<Columns>
+					<asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+					<asp:BoundField DataField="PlaylistName" HeaderText="Playlist name" SortExpression="PlaylistName">
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+					</asp:BoundField>
+					<asp:BoundField DataField="FirstSongName" HeaderText="1. song" SortExpression="FirstSongName">
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+					</asp:BoundField>
+					<asp:BoundField DataField="SecondSongName" HeaderText="2. song" SortExpression="SecondSongName">
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+					</asp:BoundField>
+					<asp:BoundField DataField="ThirdSongName" HeaderText="3. song" SortExpression="ThirdSongName">
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+					</asp:BoundField>
+					<asp:BoundField DataField="FourthSongName" HeaderText="4. song" SortExpression="FourthSongName">
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+					</asp:BoundField>
+					<asp:BoundField DataField="FifthSongName" HeaderText="5. song" SortExpression="FifthSongName">
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+					</asp:BoundField>
+					<asp:BoundField DataField="SixthSongName" HeaderText="6. song" SortExpression="SixthSongName">
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+					</asp:BoundField>
+					<asp:BoundField DataField="SeventhSongName" HeaderText="7. song" SortExpression="SeventhSongName">
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+					</asp:BoundField>
+					<asp:BoundField DataField="EighthSongName" HeaderText="8. song" SortExpression="EighthSongName">
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+					</asp:BoundField>
+					<asp:BoundField DataField="NinethSongName" HeaderText="9. song" SortExpression="NinethSongName">
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+					</asp:BoundField>
+					<asp:BoundField DataField="TenthSongName" HeaderText="10. song" SortExpression="TenthSongName">
+					<HeaderStyle HorizontalAlign="Center" />
+					<ItemStyle HorizontalAlign="Center" />
+					</asp:BoundField>
+				</Columns>
+				<FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+				<HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+				<PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+				<RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+				<SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+				<SortedAscendingCellStyle BackColor="#FDF5AC" />
+				<SortedAscendingHeaderStyle BackColor="#4D0000" />
+				<SortedDescendingCellStyle BackColor="#FCF6C0" />
+				<SortedDescendingHeaderStyle BackColor="#820000" />
+			</asp:GridView>
 			<br />
 			<br />
 			<br />
