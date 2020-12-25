@@ -51,6 +51,12 @@
 			<br />
 			<asp:Button ID="RegisterButton" runat="server" Text="Login" Width="162px" OnClick="RegisterButton_Click" />
 			<asp:Button ID="SignInButton" runat="server" Text="Sign up " Width="299px" OnClick="SignInButton_Click" />
+		    <br />
+            <br />
+            <asp:Panel ID="Panel3" runat="server" Height="52px">
+                <asp:Label ID="InvalidLoginOrPasswordLabel" runat="server" Font-Bold="True" Font-Names="Sitka Text" ForeColor="Red" Text="Invalid login or password, try again" Visible="False"></asp:Label>
+            </asp:Panel>
+            <br />
 		</asp:Panel>
 	</form>
 </body>
