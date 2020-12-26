@@ -126,5 +126,10 @@ namespace SongRepository
             connection.Close();
             Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
+
+        protected void logoutButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
     }
 }

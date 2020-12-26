@@ -53,5 +53,10 @@ namespace SongRepository
         {
             Response.Redirect("PlaylistsPage.aspx");
         }
+
+        protected void logoutButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
     }
 }
