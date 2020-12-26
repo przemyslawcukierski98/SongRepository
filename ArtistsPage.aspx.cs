@@ -58,12 +58,55 @@ namespace SongRepository
             string country = CountryTb.Text;
             string date = DataCalendar.SelectedDate.ToShortDateString();
 
-            SqlCommand command = new SqlCommand("Insert into Artists values ('"
-            + nick + "','" + date + "','" + genres + "','" + country + "')", connection);
+            var nickValidation = NickTb.Text.Length < 100 && (NickTb.Text != "");
+            var genresValidation = GenresTb.Text.Length < 100 && (GenresTb.Text != "");
+            var countryValidation = CountryTb.Text.Length < 75 && (CountryTb.Text != "");
 
-            command.ExecuteNonQuery();
-            connection.Close();
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            if(nickValidation && genresValidation && countryValidation)
+            {
+                SqlCommand command = new SqlCommand("Insert into Artists values ('"
+                + nick + "','" + date + "','" + genres + "','" + country + "')", connection);
+
+                command.ExecuteNonQuery();
+                connection.Close();
+                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            }
+            if(!nickValidation && genresValidation && countryValidation)
+            {
+                NickValidationLabel.Visible = true;
+                GenresValidationLabel0.Visible = false;
+                CountryValidationLabel.Visible = false;
+            }
+            if(nickValidation && !genresValidation && countryValidation)
+            {
+                NickValidationLabel.Visible = false;
+                GenresValidationLabel0.Visible = true;
+                CountryValidationLabel.Visible = false;
+            }
+            if(nickValidation && !genresValidation && !countryValidation)
+            {
+                NickValidationLabel.Visible = false;
+                GenresValidationLabel0.Visible = true;
+                CountryValidationLabel.Visible = true;
+            }
+            if(nickValidation && genresValidation && !countryValidation)
+            {
+                NickValidationLabel.Visible = false;
+                GenresValidationLabel0.Visible = false;
+                CountryValidationLabel.Visible = true;
+            }
+            if(!nickValidation && !genresValidation && countryValidation)
+            {
+                NickValidationLabel.Visible = true;
+                GenresValidationLabel0.Visible = true;
+                CountryValidationLabel.Visible = false;
+            }
+            if(!nickValidation && !genresValidation && !countryValidation)
+            {
+                NickValidationLabel.Visible = true;
+                GenresValidationLabel0.Visible = true;
+                CountryValidationLabel.Visible = true;
+            }
         }
 
         protected void playlistButton_Click(object sender, EventArgs e)

@@ -132,20 +132,24 @@
 			<asp:Label ID="Label2" runat="server" Text="Pseudonim"></asp:Label>
 			&nbsp;&nbsp;
 			<asp:TextBox ID="NickTb" runat="server"></asp:TextBox>
-			<br />
-			<br />
-			<asp:Label ID="Label3" runat="server" Text="Date of birth"></asp:Label>
-			<br />
-			<asp:Calendar ID="DataCalendar" runat="server"></asp:Calendar>
-			<br />
-			<asp:Label ID="Label4" runat="server" Text="Genres"></asp:Label>
-			&nbsp;&nbsp;
-			<asp:TextBox ID="GenresTb" runat="server"></asp:TextBox>
-			<br />
-			<br />
-			<asp:Label ID="Label5" runat="server" Text="Country of birth"></asp:Label>
 			&nbsp;
+            <asp:Label ID="NickValidationLabel" runat="server" Font-Bold="True" ForeColor="Red" Text="The length of the pseudonim may not be null or less more 100" Visible="False"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="Date of birth"></asp:Label>
+            <br />
+            <asp:Calendar ID="DataCalendar" runat="server"></asp:Calendar>
+            <br />
+            <asp:Label ID="Label4" runat="server" Text="Genres"></asp:Label>
+            &nbsp;&nbsp;
+			<asp:TextBox ID="GenresTb" runat="server"></asp:TextBox>
+			&nbsp;<asp:Label ID="GenresValidationLabel0" runat="server" Font-Bold="True" ForeColor="Red" Text="The length of the genres may not be null or more than 100" Visible="False"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="Label5" runat="server" Text="Country of birth"></asp:Label>
+&nbsp;
 			<asp:TextBox ID="CountryTb" runat="server"></asp:TextBox>
+			&nbsp;<asp:Label ID="CountryValidationLabel" runat="server" Font-Bold="True" ForeColor="Red" Text="The length of the country of birth may not be null or more than 75" Visible="False"></asp:Label>
 			<br />
 			<br />
 			<br />

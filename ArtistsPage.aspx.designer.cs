@@ -159,6 +159,15 @@ namespace SongRepository
         protected global::System.Web.UI.WebControls.TextBox NickTb;
 
         /// <summary>
+        /// Kontrolka NickValidationLabel.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NickValidationLabel;
+
+        /// <summary>
         /// Kontrolka Label3.
         /// </summary>
         /// <remarks>
@@ -195,6 +204,15 @@ namespace SongRepository
         protected global::System.Web.UI.WebControls.TextBox GenresTb;
 
         /// <summary>
+        /// Kontrolka GenresValidationLabel0.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label GenresValidationLabel0;
+
+        /// <summary>
         /// Kontrolka Label5.
         /// </summary>
         /// <remarks>
@@ -211,6 +229,15 @@ namespace SongRepository
         /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CountryTb;
+
+        /// <summary>
+        /// Kontrolka CountryValidationLabel.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CountryValidationLabel;
 
         /// <summary>
         /// Kontrolka AddArtistButtonFromPanel.
