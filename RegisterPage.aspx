@@ -32,13 +32,15 @@
 				<asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" HorizontalAlign="center" Text="No account? Sign up!" Font-Names="Sitka Text"></asp:Label>
 			</asp:Panel>
 		</div>
-		<asp:Panel ID="RegisterPanel" runat="server" Height="330px" HorizontalAlign="Center">
+		<asp:Panel ID="RegisterPanel" runat="server" Height="390px" HorizontalAlign="Center">
 			<br />
 			<asp:Label ID="Label1" runat="server" Text="Login" Font-Bold="True" Font-Size="Large"></asp:Label>
 			<br />
 			<br />
 			<asp:TextBox ID="LoginTb" runat="server" Width="278px"></asp:TextBox>
 			<br />
+            <br />
+            <asp:Label ID="LoginValidationLabel" runat="server" Font-Bold="True" ForeColor="Red" Text="Login must not be longer than 50 characters" Visible="False"></asp:Label>
 			<br />
 			<br />
 			<asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="Large" Text="Password"></asp:Label>
@@ -47,6 +49,7 @@
 			&nbsp;<asp:TextBox ID="PasswordTb" runat="server" Width="281px" TextMode="Password"></asp:TextBox>
 			<br />
 			<br />
+			<asp:Label ID="PasswordValidationLabel" runat="server" Font-Bold="True" ForeColor="Red" Text="Password must contain at least a number and one upper case letter" Visible="False"></asp:Label>
 			<br />
 			<br />
 			<asp:Button ID="RegisterButton" runat="server" Text="Register" Width="162px" OnClick="RegisterButton_Click" />

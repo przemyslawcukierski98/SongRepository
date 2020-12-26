@@ -69,6 +69,15 @@ namespace SongRepository
         protected global::System.Web.UI.WebControls.TextBox LoginTb;
 
         /// <summary>
+        /// Kontrolka LoginValidationLabel.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LoginValidationLabel;
+
+        /// <summary>
         /// Kontrolka Label2.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace SongRepository
         /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PasswordTb;
+
+        /// <summary>
+        /// Kontrolka PasswordValidationLabel.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PasswordValidationLabel;
 
         /// <summary>
         /// Kontrolka RegisterButton.

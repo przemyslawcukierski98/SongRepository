@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -22,13 +23,28 @@ namespace SongRepository
         {
             string login = LoginTb.Text;
             string password = PasswordTb.Text;
+            var hasNumber = new Regex(@"[0-9]+");
+            var hasUpperChar = new Regex(@"[A-Z]+");
+            var passwordValidation = hasNumber.IsMatch(password) && hasUpperChar.IsMatch(password);
+            var lengthOfLogin = LoginTb.Text.Length;
 
-            SqlCommand command = new SqlCommand("Insert into Users values ('"
-            + login + "','" + password + "')", connection);
+            if (passwordValidation && lengthOfLogin < 50)
+            {
+                SqlCommand command = new SqlCommand("Insert into Users values ('"
+                + login + "','" + password + "')", connection);
 
-            command.ExecuteNonQuery();
-            connection.Close();
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                command.ExecuteNonQuery();
+                connection.Close();
+                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            }
+            else if(!passwordValidation)
+            {
+                PasswordValidationLabel.Visible = true;
+            }
+            else if(lengthOfLogin > 50)
+            {
+                LoginValidationLabel.Visible = true;
+            }
         }
 
         protected void SignInButton_Click(object sender, EventArgs e)
