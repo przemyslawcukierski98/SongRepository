@@ -123,11 +123,15 @@
 			<asp:Label ID="Label2" runat="server" Text="Title"></asp:Label>
 			&nbsp;&nbsp;
 			<asp:TextBox ID="TitleTb" runat="server"></asp:TextBox>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<asp:Label ID="TitleValidationLabel" runat="server" Font-Bold="True" ForeColor="Red" Text="The length of the title may not be null or less than 100" Visible="False"></asp:Label>
 			<br />
 			<br />
 			<asp:Label ID="Label3" runat="server" Text="Genres"></asp:Label>
 			&nbsp;&nbsp;
 			<asp:TextBox ID="GenresTb" runat="server"></asp:TextBox>
+			&nbsp;
+			<asp:Label ID="GenresValidationLabel" runat="server" Font-Bold="True" ForeColor="Red" Text="The length of the genres may not be null or less than 50" Visible="False"></asp:Label>
 			<br />
 			<br />
 			<asp:Label ID="Label4" runat="server" Text="Length"></asp:Label>
@@ -135,7 +139,8 @@
 			<asp:TextBox ID="MinTb" runat="server" Width="50px"></asp:TextBox>
 			&nbsp; min
 			<asp:TextBox ID="SecTb" runat="server" Width="50px"></asp:TextBox>
-			&nbsp;s
+			&nbsp;s&nbsp;&nbsp;
+			<asp:Label ID="LengthValidationLabel" runat="server" Font-Bold="True" ForeColor="Red" Text="The length of the length may not be null or less than 15" Visible="False"></asp:Label>
 			<br />
 			<br />
 			<asp:Label ID="Label5" runat="server" Text="Release date"></asp:Label>
