@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace SongRepository
 {
@@ -92,28 +88,37 @@ namespace SongRepository
 
             if(HowManySongsRadioList.SelectedValue == "3")
             {
-                command = new SqlCommand("Insert into Table values ('"
+                command = new SqlCommand("Insert into Playlists values ('"
                 + playlistName + "','" + firstSongTitle + "','" +
-                secondSongTitle + "','" + thirdSongTitle + "')", connection);
+                secondSongTitle + "','" + thirdSongTitle + "','" +
+                "empty" + "','" + "empty" + "','" +
+                "empty" + "','" + "empty" + "','" +
+                "empty" + "','" + "empty" + "','" +
+                "empty" + "')", connection);
             }
             else if(HowManySongsRadioList.SelectedValue == "5")
             {
-                command = new SqlCommand("Insert into Table values ('"
+                command = new SqlCommand("Insert into Playlists values ('"
                 + playlistName + "','" + firstSongTitle + "','" +
                 secondSongTitle + "','" + thirdSongTitle + "','" +
-                fourthSongTitle + "','" + fifthSongTitle + "')", connection);
+                fourthSongTitle + "','" + fifthSongTitle + "','" +
+                "empty" + "','" + "empty" + "','" +
+                "empty" + "','" + "empty" + "','" +
+                "empty" + "')", connection);
             }
             else if(HowManySongsRadioList.SelectedValue == "7")
             {
-                command = new SqlCommand("Insert into Table values ('"
+                command = new SqlCommand("Insert into Playlists values ('"
                 + playlistName + "','" + firstSongTitle + "','" +
-                secondSongTitle + "','" + thirdSongTitle + "','" + 
+                secondSongTitle + "','" + thirdSongTitle + "','" +
                 fourthSongTitle + "','" + fifthSongTitle + "','" +
-                sixthSongTitle + "','" + seventhSongTitle + "')", connection);
+                sixthSongTitle + "','" + seventhSongTitle + "','" +
+                "empty" + "','" + "empty" + "','" +
+                "empty" + "')", connection);
             }
             else if(HowManySongsRadioList.SelectedValue == "10")
             {
-                command = new SqlCommand("Insert into Table values ('"
+                command = new SqlCommand("Insert into Playlists values ('"
                 + playlistName + "','" + firstSongTitle + "','" +
                 secondSongTitle + "','" + thirdSongTitle + "','" +
                 fourthSongTitle + "','" + fifthSongTitle + "','" +

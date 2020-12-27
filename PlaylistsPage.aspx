@@ -75,7 +75,7 @@
 			<asp:Label ID="titleLabel" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#CC0000" HorizontalAlign="center" Text="Make your playlist" Font-Names="Sitka Text"></asp:Label>
 		</asp:Panel>
 		<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Songs]"></asp:SqlDataSource>
-		<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Table]"></asp:SqlDataSource>
+		<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Playlists]"></asp:SqlDataSource>
 		<p>
 			<asp:Label ID="titleLabel0" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Blue" HorizontalAlign="center" Text="How many songs should the playlist have?" Font-Names="Sitka Text"></asp:Label>
 		</p>
