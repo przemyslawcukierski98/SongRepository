@@ -134,24 +134,30 @@
 			<asp:Label ID="Label2" runat="server" Text="Name"></asp:Label>
 			&nbsp;&nbsp;
 			<asp:TextBox ID="NameTb" runat="server"></asp:TextBox>
-			<br />
-			<br />
-			<asp:Label ID="Label3" runat="server" Text="Length"></asp:Label>
 			&nbsp;
+			<asp:Label ID="NickValidationLabel" runat="server" Font-Bold="True" ForeColor="Red" Text="The length of the name may not be null or more than 100" Visible="False"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="Length"></asp:Label>
+            &nbsp;
 			<asp:TextBox ID="MinTb" runat="server" Width="38px"></asp:TextBox>
 			&nbsp;
 			<asp:Label ID="Label4" runat="server" Text="min"></asp:Label>
 			&nbsp;
 			<asp:TextBox ID="SecTb" runat="server" Width="38px"></asp:TextBox>
-			&nbsp; s<br />
+			&nbsp; s&nbsp;&nbsp;
+            <asp:Label ID="LengthValidationLabel" runat="server" Font-Bold="True" ForeColor="Red" Text="The length of the name may not be null or more than 100" Visible="False"></asp:Label>
+            <br />
 			<br />
 			<asp:Label ID="Label5" runat="server" Text="Genres"></asp:Label>
 			&nbsp;
 			<asp:TextBox ID="GenresTb" runat="server"></asp:TextBox>
-			<br />
-			<br />
-			<asp:Label ID="Label6" runat="server" Text="Tempo"></asp:Label>
 			&nbsp;
+			<asp:Label ID="GenresValidationLabel" runat="server" Font-Bold="True" ForeColor="Red" Text="The length of the name may not be null or more than 100" Visible="False"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="Label6" runat="server" Text="Tempo"></asp:Label>
+            &nbsp;
 			<asp:DropDownList ID="TempoDropdown" runat="server" Width="167px">
 				<asp:ListItem>Slow</asp:ListItem>
 				<asp:ListItem>Medium</asp:ListItem>

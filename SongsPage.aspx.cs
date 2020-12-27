@@ -56,13 +56,57 @@ namespace SongRepository
             string artist = ArtistDropdown.SelectedValue.ToString();
             string length = min + ":" + sec;
 
-            SqlCommand command = new SqlCommand("Insert into Songs values ('"
-            + name + "','" + length + "','" + genres + "','" + tempo + "','"
-            + album + "','" + artist + "')", connection);
+            var nickValidation = NameTb.Text.Length < 100 && (NameTb.Text != "");
+            var genresValidation = GenresTb.Text.Length < 100 && (GenresTb.Text != "");
+            var lengthValidation = length.Length < 15 && (MinTb.Text != "") && (SecTb.Text != "");
 
-            command.ExecuteNonQuery();
-            connection.Close();
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            if(nickValidation && genresValidation && lengthValidation)
+            {
+                SqlCommand command = new SqlCommand("Insert into Songs values ('"
+                + name + "','" + length + "','" + genres + "','" + tempo + "','"
+                + album + "','" + artist + "')", connection);
+
+                command.ExecuteNonQuery();
+                connection.Close();
+                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            }
+            if (!nickValidation && genresValidation && lengthValidation)
+            {
+                NickValidationLabel.Visible = true;
+                GenresValidationLabel.Visible = false;
+                LengthValidationLabel.Visible = false;
+            }
+            if (nickValidation && !genresValidation && lengthValidation)
+            {
+                NickValidationLabel.Visible = false;
+                GenresValidationLabel.Visible = true;
+                LengthValidationLabel.Visible = false;
+            }
+            if (nickValidation && genresValidation && !lengthValidation)
+            {
+                NickValidationLabel.Visible = false;
+                GenresValidationLabel.Visible = false;
+                LengthValidationLabel.Visible = true;
+            }
+            if (nickValidation && !genresValidation && lengthValidation)
+            {
+                NickValidationLabel.Visible = true;
+                GenresValidationLabel.Visible = true;
+                LengthValidationLabel.Visible = false;
+            }
+            if (nickValidation && !genresValidation && !lengthValidation)
+            {
+                NickValidationLabel.Visible = false;
+                GenresValidationLabel.Visible = true;
+                LengthValidationLabel.Visible = true;
+            }
+            if (!nickValidation && !genresValidation && !lengthValidation)
+            {
+                NickValidationLabel.Visible = true;
+                GenresValidationLabel.Visible = true;
+                LengthValidationLabel.Visible = true;
+            }
+
         }
 
         protected void playlistButton_Click(object sender, EventArgs e)

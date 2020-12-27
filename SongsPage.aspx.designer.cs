@@ -177,6 +177,15 @@ namespace SongRepository
         protected global::System.Web.UI.WebControls.TextBox NameTb;
 
         /// <summary>
+        /// Kontrolka NickValidationLabel.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NickValidationLabel;
+
+        /// <summary>
         /// Kontrolka Label3.
         /// </summary>
         /// <remarks>
@@ -213,6 +222,15 @@ namespace SongRepository
         protected global::System.Web.UI.WebControls.TextBox SecTb;
 
         /// <summary>
+        /// Kontrolka LengthValidationLabel.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LengthValidationLabel;
+
+        /// <summary>
         /// Kontrolka Label5.
         /// </summary>
         /// <remarks>
@@ -229,6 +247,15 @@ namespace SongRepository
         /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox GenresTb;
+
+        /// <summary>
+        /// Kontrolka GenresValidationLabel.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label GenresValidationLabel;
 
         /// <summary>
         /// Kontrolka Label6.
